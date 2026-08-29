@@ -7,14 +7,14 @@ const GTA = 'https://www.rockstargames.com/VI/_next/static/media/Official_Cover_
 const LOGO = './assets/blvnd-logo.png'
 const WHATSAPP = '94702744157'
 const GAME_IMAGES = {
-  'GTA V': 'https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg',
-  'PRAGMATA': 'https://cdn.akamai.steamstatic.com/steam/apps/3357650/header.jpg',
-  'SPIDER-MAN MILES MORALES': 'https://cdn.akamai.steamstatic.com/steam/apps/1817190/header.jpg',
-  'GHOST OF TSUSHIMA': 'https://cdn.akamai.steamstatic.com/steam/apps/2215430/header.jpg',
-  'MORTAL KOMBAT 1': 'https://cdn.akamai.steamstatic.com/steam/apps/1971870/header.jpg',
-  'FC 26': 'https://cdn.akamai.steamstatic.com/steam/apps/3405690/header.jpg',
-  'NFS PAYBACK': 'https://cdn.akamai.steamstatic.com/steam/apps/1262580/header.jpg',
-  'DIRT RALLY': 'https://cdn.akamai.steamstatic.com/steam/apps/310560/header.jpg'
+  'GTA V': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg',
+  'PRAGMATA': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/header.jpg',
+  'SPIDER-MAN MILES MORALES': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg',
+  'GHOST OF TSUSHIMA': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg',
+  'MORTAL KOMBAT 1': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1971870/header.jpg',
+  'FC 26': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3405690/header.jpg',
+  'NFS PAYBACK': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1262580/header.jpg',
+  'DIRT RALLY': 'https://cdn.cloudflare.steamstatic.com/steam/apps/690790/header.jpg'
 }
 const VENUE_IMAGES = {
   console: GAME_IMAGES['SPIDER-MAN MILES MORALES'],
