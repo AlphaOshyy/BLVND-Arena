@@ -4,7 +4,7 @@ import './enhancements.css'
 import './gaming.css'
 
 const STEAM = id => `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`
-const GTA = STEAM(3240220)
+const GTA = 'https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?akim=1&imwidth=1920'
 const LOGO = './assets/blvnd-logo.png'
 const WHATSAPP = '94702744157'
 const GAME_IMAGES = {
