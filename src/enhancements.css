@@ -1,0 +1,40 @@
+/* BLVND interaction layer. */
+:root{--ease-blvnd:cubic-bezier(.16,1,.3,1)}
+html{scroll-padding-top:80px}
+.nav{transition:background .35s ease,backdrop-filter .35s ease,transform .35s var(--ease-blvnd);position:relative}
+.nav:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--pink),transparent);transform:scaleX(0);transition:transform .6s var(--ease-blvnd)}
+.nav:hover:after{transform:scaleX(1)}
+.hero-content{animation:blvndHeroIn 1.1s var(--ease-blvnd) both}
+.hero-image,.crew-bg{will-change:transform}
+.hero-actions .primary-btn,.hero-actions .ghost-btn,.nav-book{position:relative;overflow:hidden}
+.hero-actions .primary-btn:after,.hero-actions .ghost-btn:after,.nav-book:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.28) 48%,transparent 72%);transform:translateX(-120%);transition:transform .7s var(--ease-blvnd)}
+.hero-actions .primary-btn:hover:after,.hero-actions .ghost-btn:hover:after,.nav-book:hover:after{transform:translateX(120%)}
+.game-card,.package-card,.venue-tile{will-change:transform}
+.game-card:after,.package-card:after,.venue-tile:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.06),transparent 65%);transform:translateX(-130%);transition:transform .8s var(--ease-blvnd)}
+.game-card:hover:after,.package-card:hover:after,.venue-tile:hover:after{transform:translateX(130%)}
+.package-card strong{transition:transform .35s var(--ease-blvnd),letter-spacing .35s ease}
+.package-card:hover strong{transform:translateX(4px);letter-spacing:.5px}
+.gta-art:hover{transform:scale(1.012)}
+.location-card{transition:transform .4s var(--ease-blvnd),border-color .3s ease}
+.location-card:hover{transform:translateY(-5px);border-color:rgba(255,63,157,.5)}
+.location-card a{transition:gap .3s ease}
+.location-card a:hover{gap:14px}
+.modal-backdrop{animation:blvndBackdrop .35s ease both}
+.booking-modal{animation:blvndModal .55s var(--ease-blvnd) both}
+.mobile-menu{animation:blvndMenu .5s var(--ease-blvnd) both}
+.toast{animation:blvndToast .45s var(--ease-blvnd) both}
+.scroll-cue svg{animation:blvndScroll 1.4s ease-in-out infinite}
+.live-dot{animation:blvndPulse 1.6s ease-in-out infinite}
+.section-kicker{display:inline-flex;align-items:center;gap:9px}
+.section-kicker:before{content:"";width:22px;height:1px;background:var(--pink);display:inline-block;transition:width .4s ease}
+.section-heading:hover .section-kicker:before,.section-copy:hover .section-kicker:before{width:42px}
+@keyframes blvndHeroIn{from{opacity:0;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blvndBackdrop{from{opacity:0}to{opacity:1}}
+@keyframes blvndModal{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes blvndMenu{from{opacity:0;transform:translateX(100%)}to{opacity:1;transform:translateX(0)}}
+@keyframes blvndToast{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blvndScroll{0%,100%{transform:translateY(-3px);opacity:.55}50%{transform:translateY(5px);opacity:1}}
+@keyframes blvndPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.65}}
+@media (max-width:900px){.desktop-nav,.nav-book{display:none}.menu-button{display:block}.hero{padding:0 7vw 9vh;min-height:92svh}.hero h1{font-size:clamp(92px,25vw,150px)}.hero-meta{display:none}.gta-section,.games-section,.packages-section,.arcade-section{padding:90px 5vw}.section-grid{grid-template-columns:1fr;gap:35px}.gta-art{height:58svh;min-height:420px}.game-grid{grid-template-columns:1fr 1fr}.game-featured{grid-column:span 2}.rate-grid,.gta-grid{grid-template-columns:1fr}.venue-grid{grid-template-columns:1fr 1fr}.crew-section{min-height:680px;padding:90px 7vw}.crew-stats{gap:20px;flex-wrap:wrap}.location-card{align-items:flex-start;gap:25px;flex-direction:column}.footer-bottom{flex-direction:column}.booking-modal{padding:28px 20px}.booking-head h2{font-size:64px}}
+@media (max-width:560px){.hero{padding-left:6vw;padding-right:6vw}.hero p{font-size:12px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .primary-btn,.hero-actions .ghost-btn{width:100%}.game-grid{grid-template-columns:1fr}.game-featured{grid-column:auto}.game-card{min-height:390px}.venue-grid{grid-template-columns:1fr}.crew-stats{display:grid;grid-template-columns:1fr 1fr}.crew-price{font-size:55px}.rate-title{display:block}.rate-title>span{display:block;margin-bottom:8px}.rate-title p{margin-top:7px}.form-row{grid-template-columns:1fr}.booking-head h2{font-size:56px}.sent-state h2{font-size:66px}.footer-links{flex-wrap:wrap;gap:16px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
