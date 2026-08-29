@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/BLVND-Arena/',
   resolve: {
     alias: {
-      'lucide-react': path.resolve(__dirname, 'src/lucide-react-compat.js')
+      'lucide-react': path.resolve(__dirname, 'src/lucide-react-compat.jsx')
     }
   }
 })
