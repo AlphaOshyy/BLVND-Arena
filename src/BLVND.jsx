@@ -6,15 +6,16 @@ import './gaming.css'
 const GTA = 'https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?akim=1&imwidth=1920'
 const LOGO = './assets/blvnd-logo.png'
 const WHATSAPP = '94702744157'
+const STEAM_ART = id => `https://shared.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`
 const GAME_IMAGES = {
-  'GTA V': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg',
-  'PRAGMATA': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/header.jpg',
-  'SPIDER-MAN MILES MORALES': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg',
-  'GHOST OF TSUSHIMA': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg',
-  'MORTAL KOMBAT 1': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1971870/header.jpg',
-  'FC 26': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3405690/header.jpg',
-  'NFS PAYBACK': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1262580/header.jpg',
-  'DIRT RALLY': 'https://cdn.cloudflare.steamstatic.com/steam/apps/690790/header.jpg'
+  'GTA V': STEAM_ART(3240220),
+  'PRAGMATA': STEAM_ART(3357650),
+  'SPIDER-MAN MILES MORALES': STEAM_ART(1817190),
+  'GHOST OF TSUSHIMA': STEAM_ART(2215430),
+  'MORTAL KOMBAT 1': STEAM_ART(1971870),
+  'FC 26': STEAM_ART(3405690),
+  'NFS PAYBACK': STEAM_ART(1262580),
+  'DIRT RALLY': STEAM_ART(690790)
 }
 const VENUE_IMAGES = {
   console: GAME_IMAGES['SPIDER-MAN MILES MORALES'],
