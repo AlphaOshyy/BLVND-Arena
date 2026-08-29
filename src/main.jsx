@@ -1,11 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './AppClean.jsx'
-import './styles.css'
-import './enhancements.css'
+import BLVND from './BLVND'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BLVND />
   </React.StrictMode>
 )
