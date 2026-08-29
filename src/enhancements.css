@@ -38,3 +38,23 @@ html{scroll-padding-top:80px}
 @media (max-width:900px){.desktop-nav,.nav-book{display:none}.menu-button{display:block}.hero{padding:0 7vw 9vh;min-height:92svh}.hero h1{font-size:clamp(92px,25vw,150px)}.hero-meta{display:none}.gta-section,.games-section,.packages-section,.arcade-section{padding:90px 5vw}.section-grid{grid-template-columns:1fr;gap:35px}.gta-art{height:58svh;min-height:420px}.game-grid{grid-template-columns:1fr 1fr}.game-featured{grid-column:span 2}.rate-grid,.gta-grid{grid-template-columns:1fr}.venue-grid{grid-template-columns:1fr 1fr}.crew-section{min-height:680px;padding:90px 7vw}.crew-stats{gap:20px;flex-wrap:wrap}.location-card{align-items:flex-start;gap:25px;flex-direction:column}.footer-bottom{flex-direction:column}.booking-modal{padding:28px 20px}.booking-head h2{font-size:64px}}
 @media (max-width:560px){.hero{padding-left:6vw;padding-right:6vw}.hero p{font-size:12px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .primary-btn,.hero-actions .ghost-btn{width:100%}.game-grid{grid-template-columns:1fr}.game-featured{grid-column:auto}.game-card{min-height:390px}.venue-grid{grid-template-columns:1fr}.crew-stats{display:grid;grid-template-columns:1fr 1fr}.crew-price{font-size:55px}.rate-title{display:block}.rate-title>span{display:block;margin-bottom:8px}.rate-title p{margin-top:7px}.form-row{grid-template-columns:1fr}.booking-head h2{font-size:56px}.sent-state h2{font-size:66px}.footer-links{flex-wrap:wrap;gap:16px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Logo and artwork refinements. */
+.brand{display:flex;align-items:center;gap:9px;height:50px}
+.brand img{display:block;width:145px;height:auto;max-height:42px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 10px rgba(255,255,255,.08))}
+.brand small{margin-top:0;align-self:flex-end;margin-bottom:3px}
+.game-grid{grid-auto-rows:minmax(460px,auto)}
+.game-card{min-height:460px;aspect-ratio:auto}
+.game-photo{inset:0;width:100%;height:100%;min-height:460px;aspect-ratio:auto;background-size:cover!important;background-position:center!important;display:block}
+.game-card .game-photo.placeholder{background-color:#100b13}
+.game-card .game-photo img{width:100%;height:100%;object-fit:cover}
+.game-card:nth-child(2) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg')!important}
+.game-card:nth-child(3) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/header.jpg')!important}
+.game-card:nth-child(4) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg')!important}
+.game-card:nth-child(5) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/2215430/header.jpg')!important}
+.game-card:nth-child(6) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/1971870/header.jpg')!important}
+.game-card:nth-child(7) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/3405690/header.jpg')!important}
+.game-card:nth-child(8) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/1262580/header.jpg')!important}
+.game-card:nth-child(9) .game-photo{background-image:url('https://cdn.cloudflare.steamstatic.com/steam/apps/690790/header.jpg')!important}
+@media (max-width:900px){.brand img{width:132px;max-height:38px}.game-card{min-height:430px}.game-photo{min-height:430px}}
+@media (max-width:560px){.brand img{width:118px;max-height:34px}.game-card{min-height:390px}.game-photo{min-height:390px}}
