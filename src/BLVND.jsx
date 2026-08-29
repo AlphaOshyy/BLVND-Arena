@@ -3,19 +3,18 @@ import './styles.css'
 import './enhancements.css'
 import './gaming.css'
 
-const STEAM = id => `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`
 const GTA = 'https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?akim=1&imwidth=1920'
 const LOGO = './assets/blvnd-logo.png'
-const WHATSAPP = '94702744157'
+const GAME_ASSETS = './assets/games/'
 const GAME_IMAGES = {
-  'GTA V': STEAM(3240220),
-  'PRAGMATA': STEAM(3357650),
-  'SPIDER-MAN MILES MORALES': STEAM(1817190),
-  'GHOST OF TSUSHIMA': STEAM(2215430),
-  'MORTAL KOMBAT 1': STEAM(1971870),
-  'FC 26': STEAM(3405690),
-  'NFS PAYBACK': STEAM(1262580),
-  'DIRT RALLY': STEAM(690790)
+  'GTA V': `${GAME_ASSETS}gta-v.jpg`,
+  'PRAGMATA': `${GAME_ASSETS}pragmata.jpg`,
+  'SPIDER-MAN MILES MORALES': `${GAME_ASSETS}spider-man-miles-morales.jpg`,
+  'GHOST OF TSUSHIMA': `${GAME_ASSETS}ghost-of-tusima.jpg`,
+  'MORTAL KOMBAT 1': `${GAME_ASSETS}mortal-kombat-1.jpg`,
+  'FC 26': `${GAME_ASSETS}fc-26.jpg`,
+  'NFS PAYBACK': `${GAME_ASSETS}nfs-payback.jpg`,
+  'DIRT RALLY': `${GAME_ASSETS}dirt-rally-2.jpg`
 }
 const VENUE_IMAGES = {console:GAME_IMAGES['SPIDER-MAN MILES MORALES'],racing:GAME_IMAGES['NFS PAYBACK'],crew:GTA,snacks:'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1400&q=85'}
 const games=[['GTA VI','FEATURED'],['GTA V','CONSOLE'],['PRAGMATA','CONSOLE'],['SPIDER-MAN MILES MORALES','CONSOLE'],['GHOST OF TSUSHIMA','CONSOLE'],['MORTAL KOMBAT 1','2 PLAYERS MAX'],['FC 26','COMING SOON'],['NFS PAYBACK','RACING SIM'],['DIRT RALLY','RACING SIM']]
