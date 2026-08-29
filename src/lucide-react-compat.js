@@ -1,5 +1,5 @@
-export * from 'lucide-react'
-import { createLucideIcon } from 'lucide-react'
+export * from 'lucide-react/dist/esm/lucide-react.mjs'
+import { createLucideIcon } from 'lucide-react/dist/esm/lucide-react.mjs'
 
 export const Instagram = createLucideIcon('instagram', [
   ['rect', { x: '3', y: '3', width: '18', height: '18', rx: '5', key: 'instagram-box' }],
