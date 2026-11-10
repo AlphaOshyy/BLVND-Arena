@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 const exhibits = [
-  {name:'GTA VI',chapter:'01 / THE CITY',type:'FEATURED EXPERIENCE',image:'https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?akim=1&imwidth=1920',blurb:'ENTER THE NEXT ERA.'},
+  {name:'GTA VI',chapter:'01 / THE CITY',type:'FEATURED EXPERIENCE',image:'/assets/games/gta-vi-gallery.svg',blurb:'ENTER THE NEXT ERA.'},
   {name:'GHOST OF TSUSHIMA',chapter:'02 / THE LEGEND',type:'ACTION ADVENTURE',image:'/assets/games/ghost-of-tusima.jpg',blurb:'EVERY MOVE MATTERS.'},
   {name:'SPIDER-MAN MILES MORALES',chapter:'03 / THE HERO',type:'ACTION ADVENTURE',image:'/assets/games/spider-man-miles-morales.jpg',blurb:'OWN YOUR MOMENT.'},
   {name:'NFS PAYBACK',chapter:'04 / THE SPEED',type:'RACING EXPERIENCE',image:'/assets/games/nfs-payback.jpg',blurb:'NO LIMITS. ALL GAS.'},
@@ -94,10 +94,40 @@ export default function ExperienceGallery({onBook}) {
         }
         const all=await Promise.all(exhibits.map(x=>load(x.image)))
         if(dead){all.filter(Boolean).forEach(t=>t.dispose());return}
-        // Use whichever images loaded, replacing broken frames with the first successful texture.
-        const fallback=all.find(Boolean)
-        if(!fallback)return
-        const loaded=all.map(t=>t||fallback)
+        // Never display a different game's artwork when an image fails.
+        // Generate a matching, local fallback texture instead.
+        const makeFallback=(entry,index)=>{
+          const canvas=document.createElement('canvas')
+          canvas.width=1024
+          canvas.height=576
+          const ctx=canvas.getContext('2d')
+          if(!ctx)return null
+          const palettes=[['#1c0f35','#f15383'],['#071c26','#4b8796'],['#13192d','#9b3ad0'],['#28111b','#d64f58'],['#201022','#aa364b']]
+          const [a,b]=palettes[index%palettes.length]
+          const gradient=ctx.createLinearGradient(0,0,1024,576)
+          gradient.addColorStop(0,a)
+          gradient.addColorStop(1,b)
+          ctx.fillStyle=gradient
+          ctx.fillRect(0,0,1024,576)
+          ctx.fillStyle='rgba(255,255,255,.08)'
+          for(let i=0;i<14;i++)ctx.fillRect(i*85-20,360+(i%3)*42,48,260)
+          ctx.fillStyle='#fff'
+          ctx.font='bold 72px Arial'
+          const name=entry.name
+          if(name.length>19){
+            const mid=Math.ceil(name.length/2)
+            ctx.fillText(name.slice(0,mid),70,270,870)
+            ctx.fillText(name.slice(mid),70,355,870)
+          }else ctx.fillText(name,70,320,870)
+          ctx.font='bold 22px Arial'
+          ctx.fillText('BLVND ARENA / '+entry.type,73,130)
+          const texture=new THREE.CanvasTexture(canvas)
+          texture.colorSpace=THREE.SRGBColorSpace
+          textures.push(texture)
+          return texture
+        }
+        const loaded=all.map((t,i)=>t||makeFallback(exhibits[i],i))
+        if(loaded.some(t=>!t))return
         renderer=new THREE.WebGLRenderer({alpha:false,antialias:false,powerPreference:'high-performance'})
         renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6))
         renderer.outputColorSpace=THREE.SRGBColorSpace
