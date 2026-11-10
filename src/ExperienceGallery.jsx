@@ -63,6 +63,7 @@ export default function ExperienceGallery({onBook}) {
   const [current,setCurrent]=useState(0)
   const [webgl,setWebgl]=useState(false)
   const indexRef=useRef(0)
+  const touchStart=useRef(null)
   const navigate=step=>{
     const next=(indexRef.current+step+exhibits.length)%exhibits.length
     if (next===indexRef.current) return
@@ -106,8 +107,9 @@ export default function ExperienceGallery({onBook}) {
         camera=new THREE.OrthographicCamera(-1,1,1,-1,.1,10)
         camera.position.z=1
         const resolution=new THREE.Vector2(1,1)
+        const first=indexRef.current
         const uniforms={
-          uFrom:{value:loaded[0]},uTo:{value:loaded[0]},uMix:{value:0},
+          uFrom:{value:loaded[first]},uTo:{value:loaded[first]},uMix:{value:0},
           uTime:{value:0},uHover:{value:0},uPointer:{value:new THREE.Vector2(.5,.5)},
           uResolution:{value:resolution},uFromSize:{value:new THREE.Vector2(1,1)},
           uToSize:{value:new THREE.Vector2(1,1)}
@@ -116,13 +118,13 @@ export default function ExperienceGallery({onBook}) {
           const image=t.image||{width:1,height:1}
           v.set(image.width||1,image.height||1)
         }
-        dims(loaded[0],uniforms.uFromSize.value)
-        dims(loaded[0],uniforms.uToSize.value)
+        dims(loaded[first],uniforms.uFromSize.value)
+        dims(loaded[first],uniforms.uToSize.value)
         const geometry=new THREE.PlaneGeometry(2,2)
         const material=new THREE.ShaderMaterial({vertexShader:vert,fragmentShader:frag,uniforms})
         mesh=new THREE.Mesh(geometry,material)
         scene.add(mesh)
-        let previous=0,elapsed=0,from=0,to=0,progress=1,active=true
+        let previous=0,elapsed=0,from=first,to=first,progress=1,active=true
         bridge.current.change=next=>{
           // Every transition starts from the fully resolved previous frame.
           from=to
@@ -196,7 +198,7 @@ export default function ExperienceGallery({onBook}) {
   const item=exhibits[current]
   return <section className="blvnd-experience" aria-label="Explore featured BLVND experiences">
     <div className="blvnd-experience-kicker"><span>02 / THE COLLECTION</span><span>EXPLORE THE GAMES</span></div>
-    <div ref={host} className={'blvnd-experience-stage'+(webgl?' webgl-ready':'')} style={{backgroundImage:`linear-gradient(180deg,rgba(4,4,8,.12),rgba(4,4,8,.5)),url("${item.image}")`}}>
+    <div ref={host} tabIndex={0} onKeyDown={e=>{if(e.key==='ArrowRight'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'){e.preventDefault();navigate(-1)}}} onTouchStart={e=>{touchStart.current=e.touches[0]?.clientX??null}} onTouchEnd={e=>{if(touchStart.current===null)return;const delta=(e.changedTouches[0]?.clientX??touchStart.current)-touchStart.current;if(Math.abs(delta)>55)navigate(delta<0?1:-1);touchStart.current=null}} className={'blvnd-experience-stage'+(webgl?' webgl-ready':'')} style={{backgroundImage:`linear-gradient(180deg,rgba(4,4,8,.12),rgba(4,4,8,.5)),url("${item.image}")`}}>
       <div className="blvnd-experience-scrim"/>
       <div className="blvnd-experience-copy" key={current}>
         <span>{item.chapter} · {item.type}</span>
