@@ -113,3 +113,32 @@ footer .footer-brand:before{content:'//';position:absolute;left:-18px;bottom:1px
 .blvnd-editorial-feature .gaming-art.blvnd-on-scroll{transform:translate3d(0,52px,0) rotate(3deg)}
 .blvnd-editorial-feature .gaming-art.blvnd-visible{transform:translate3d(0,0,0) rotate(3deg)}
 @media(prefers-reduced-motion:reduce){.blvnd-on-scroll{opacity:1;transform:none;transition:none}}
+
+/* BLVND LAB / Interactive WebGL gallery */
+.blvnd-experience{position:relative;background:#0c0a0f;color:#fff;padding:100px 4vw 80px;overflow:hidden}
+.blvnd-experience-kicker{display:flex;justify-content:space-between;align-items:center;margin:0 0 24px;gap:20px;font:700 10px 'Space Grotesk',sans-serif;letter-spacing:.22em;color:#f8a8c8}
+.blvnd-experience-stage{height:min(760px,78svh);min-height:530px;position:relative;background-position:center;background-size:cover;overflow:hidden;isolation:isolate}
+.blvnd-experience-stage.webgl-ready{background-image:none!important}
+.blvnd-experience-stage canvas{width:100%;height:100%;position:absolute;inset:0;z-index:0;display:block}
+.blvnd-experience-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,4,9,.85),rgba(5,4,9,.26) 70%),linear-gradient(0deg,rgba(5,4,9,.78),transparent 55%);z-index:1;pointer-events:none}
+.blvnd-experience-copy{position:absolute;left:clamp(25px,6vw,110px);bottom:clamp(90px,12vh,125px);z-index:2;max-width:min(850px,75%);animation:blvndGalleryEnter .8s cubic-bezier(.16,1,.3,1) both}
+.blvnd-experience-copy>span{font:700 11px 'Space Grotesk',sans-serif;letter-spacing:.2em;color:#ffb4d4}
+.blvnd-experience-copy h2{font:400 clamp(78px,12vw,190px)/.78 'Bebas Neue',Impact,sans-serif;margin:20px 0 22px;max-width:100%;text-wrap:balance;letter-spacing:-.02em}
+.blvnd-experience-copy p{font:600 12px 'Space Grotesk',sans-serif;letter-spacing:.2em;margin:0 0 30px}
+.blvnd-experience-book{min-height:52px;padding:0 25px;border:1px solid #fff;background:#fff;color:#140c12;font:700 11px 'Space Grotesk',sans-serif;letter-spacing:.12em;display:flex;align-items:center;gap:30px;transition:background .25s,color .25s}
+.blvnd-experience-book:hover{background:#ff3d8f;border-color:#ff3d8f}
+.blvnd-experience-controls{position:absolute;right:clamp(20px,4vw,70px);bottom:33px;z-index:3;display:flex;align-items:center;gap:10px}
+.blvnd-experience-controls button{width:64px;height:64px;border:1px solid rgba(255,255,255,.7);background:rgba(0,0,0,.12);color:#fff;font:24px 'Space Grotesk',sans-serif;backdrop-filter:blur(8px);transition:background .25s,transform .25s}
+.blvnd-experience-controls button:hover{background:#ff3d8f;transform:translateY(-4px)}
+.blvnd-experience-counter{font-size:12px;letter-spacing:.12em;margin-right:20px;display:flex;gap:12px;align-items:center}
+.blvnd-experience-counter i{width:37px;height:1px;background:#fff}
+.blvnd-experience-index{position:absolute;z-index:3;right:28px;top:30px;writing-mode:vertical-rl;font:700 9px 'Space Grotesk',sans-serif;letter-spacing:.2em;color:#fff}
+.blvnd-experience-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid rgba(255,255,255,.14)}
+.blvnd-experience-tabs button{text-align:left;padding:23px 16px;min-height:100px;border:0;border-right:1px solid rgba(255,255,255,.15);border-bottom:2px solid transparent;background:transparent;color:#8a828a;display:flex;flex-direction:column;gap:13px;transition:background .25s,color .25s,border-color .25s}
+.blvnd-experience-tabs button.active,.blvnd-experience-tabs button:hover{background:#23151e;color:#fff;border-bottom-color:#ff3d8f}
+.blvnd-experience-tabs button small{font-size:10px;color:#ff84b2}
+.blvnd-experience-tabs button span{font:700 10px 'Space Grotesk',sans-serif;letter-spacing:.1em;line-height:1.5}
+@keyframes blvndGalleryEnter{from{opacity:0;transform:translateY(45px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media(max-width:800px){.blvnd-experience{padding:75px 5vw}.blvnd-experience-stage{min-height:610px;height:74svh}.blvnd-experience-copy{bottom:135px;left:25px;max-width:calc(100% - 50px)}.blvnd-experience-copy h2{font-size:clamp(70px,13vw,120px)}.blvnd-experience-controls{right:20px;bottom:22px}.blvnd-experience-controls button{width:52px;height:52px}.blvnd-experience-tabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.blvnd-experience-tabs button{min-width:170px;scroll-snap-align:start}}
+@media(max-width:480px){.blvnd-experience-stage{min-height:560px}.blvnd-experience-copy h2{font-size:clamp(65px,15vw,95px)}.blvnd-experience-copy p{font-size:10px}.blvnd-experience-counter{margin-right:4px}.blvnd-experience-index{display:none}}
+@media(prefers-reduced-motion:reduce){.blvnd-experience-copy{animation:none}.blvnd-experience-controls button{transition:none}}
