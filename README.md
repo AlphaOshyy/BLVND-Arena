@@ -20,12 +20,17 @@ The first build focuses on a fast mobile and desktop experience with a GTA VI in
 
 | Package | Price |
 | --- | ---: |
-| 15 min | Rs. 300 |
-| 15 min + snack or drink | Rs. 550 |
-| Standard, 1 hour | Rs. 750 |
-| Gamer Combo, 1 hour + snack or drink | Rs. 1,100 |
-| Crew Pack, 4 players, 1 hour, snack for each, group photo | Rs. 4,200 |
-| Launch Day VIP | Rs. 1,150 |
+| 30 minutes | Rs. 350 |
+| 1 hour | Rs. 650 |
+| 2 hours | Rs. 1,200 |
+| 3 hours | Rs. 1,800 |
+| Longer sessions | Rs. 600 per hour for sessions over 1 hour |
+| 30-minute combo, 1 cool drink | Rs. 450 |
+| 1-hour combo, 1 cool drink | Rs. 750 |
+| Crew Pack, 4 people, 1 hour, 4 cool drinks | Rs. 1,200 |
+| Extra cool drink | Rs. 140 |
+
+The site renders a responsive Three.js hero illustration behind the existing BLVND branding. The 3D scene is lazy-loaded and does not capture pointer events. It pauses rendering when offscreen, and users with reduced-motion preferences see the static hero.
 
 ## Run locally
 
@@ -42,12 +47,14 @@ npm run build
 
 ## Booking flow
 
-1. Customer chooses a game and package.
-2. Customer selects a date and time.
-3. Customer enters name and WhatsApp number.
-4. The request is saved locally as Pending in the starter build.
-5. WhatsApp opens with a prefilled booking request.
-6. BLVND staff confirms or rejects the request manually.
+1. Customer chooses a game and a package.
+2. The form displays GTA VI pricing only for GTA VI, and existing standard rates for other games.
+3. Customer picks date and time and enters their contact information.
+4. The form calculates any extra GTA VI cool drinks at Rs. 140 each.
+5. WhatsApp opens with the package, price, total, and requested session details.
+6. BLVND staff confirms availability manually through WhatsApp.
+
+The active entry point is `src/main.jsx`, which imports `src/BLVND.jsx`. Other legacy React components are not used by the production entry point.
 
 ## Admin starter
 
