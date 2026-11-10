@@ -13,3 +13,17 @@ footer .footer-brand:before{content:'//';position:absolute;left:-18px;bottom:1px
 .footer-socials a:after{content:'↗';margin-left:10px;color:var(--pink);font-size:12px;transition:transform .3s ease}
 .footer-socials a:hover:after{transform:translate(3px,-3px)}
 @media(max-width:700px){footer .footer-brand:before{left:-13px}.footer-socials{flex-wrap:wrap;gap:8px}.footer-socials a{padding:11px 13px;font-size:8px}}
+
+/* Immersive 3D hero: lightweight canvas behind the booking UI */
+.gaming-hero{isolation:isolate;background:#07060c}
+.gaming-hero .hero-image{opacity:.53;filter:saturate(.8) contrast(1.15);z-index:0}
+.gaming-hero:after{z-index:0;pointer-events:none}
+.blvnd-three-scene{position:absolute;inset:0 0 0 36%;z-index:1;pointer-events:none;overflow:hidden;opacity:.86;mask-image:linear-gradient(90deg,transparent,#000 20%,#000 93%,transparent)}
+.blvnd-three-scene canvas{display:block;width:100%;height:100%}
+.gaming-hero .hero-content{position:relative;z-index:4;text-shadow:0 3px 20px rgba(0,0,0,.4)}
+.gaming-hero .hero-scanlines,.gaming-hero .hero-noise{z-index:2}
+.gaming-hero .hero-corner,.gaming-hero .scroll-cue{z-index:4}
+.gaming-app .gta-rates .package-card:focus-visible,.gaming-app .game-card:focus-visible{outline:2px solid #ff79bc;outline-offset:3px}
+@media(max-width:900px){.blvnd-three-scene{inset:0 0 8% 12%;opacity:.55}.gaming-hero .hero-image{opacity:.56}}
+@media(max-width:600px){.blvnd-three-scene{inset:10% -28% 20% 10%;opacity:.35}.gaming-hero .hero-image{opacity:.72}.gaming-hero .hero-content{padding-bottom:8vh}}
+@media(prefers-reduced-motion:reduce){.blvnd-three-scene{display:none}}
