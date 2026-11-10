@@ -27,3 +27,81 @@ footer .footer-brand:before{content:'//';position:absolute;left:-18px;bottom:1px
 @media(max-width:900px){.blvnd-three-scene{inset:0 0 8% 12%;opacity:.55}.gaming-hero .hero-image{opacity:.56}}
 @media(max-width:600px){.blvnd-three-scene{inset:10% -28% 20% 10%;opacity:.35}.gaming-hero .hero-image{opacity:.72}.gaming-hero .hero-content{padding-bottom:8vh}}
 @media(prefers-reduced-motion:reduce){.blvnd-three-scene{display:none}}
+
+/* BLVND : 2026 experimental editorial direction
+   An intentional typography/photography/3D system, not a neon template. */
+.gaming-app{--pink:#ff3d8f;--bg:#09090b;--panel:#151317;--line:rgba(255,255,255,.17);background:#09090b;color:#f9f7f5}
+.blvnd-editorial-hero{min-height:100svh;height:min(980px,100svh);align-items:center;padding:90px clamp(24px,6.5vw,130px) 80px;background:#08080a;isolation:isolate}
+.blvnd-editorial-hero .hero-image{opacity:.12!important;filter:grayscale(1) contrast(1.8) blur(2px)!important;mix-blend-mode:screen;z-index:0}
+.blvnd-editorial-hero:after{content:"";background:linear-gradient(90deg,#08080a 0%,rgba(8,8,10,.91) 23%,rgba(8,8,10,.19) 63%,rgba(8,8,10,.1) 100%),linear-gradient(0deg,#08080a,transparent 20%);z-index:1}
+.blvnd-editorial-hero .blvnd-three-scene{inset:0 0 0 32%;mask-image:none;opacity:1;z-index:2}
+.blvnd-editorial-hero .hero-content{z-index:5;max-width:930px;padding:35px 0;text-shadow:none}
+.blvnd-editorial-hero .hero-logo{width:118px;opacity:.94;margin:4px 0 40px}
+.blvnd-editorial-hero .eyebrow{display:flex;align-items:center;gap:10px;color:#ffafcf;font-size:10px;letter-spacing:.18em}
+.hero-editorial-label{font:600 10px 'Space Grotesk',sans-serif;letter-spacing:.25em;color:#c6b8be;margin:14px 0 0}
+.blvnd-editorial-hero h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(105px,15.5vw,265px);letter-spacing:-.03em;line-height:.7;margin:36px 0 40px;text-transform:uppercase;white-space:nowrap}
+.blvnd-editorial-hero h1 em{color:#ff3d8f;-webkit-text-stroke:0;text-shadow:none;font-style:normal}
+.blvnd-editorial-hero h1::first-line{color:#fff}
+.blvnd-editorial-hero p{font-weight:600;max-width:410px;font-size:12px;letter-spacing:.1em;color:#f0e4e9;line-height:1.9}
+.blvnd-editorial-hero .hero-actions{margin-top:30px;align-items:center}
+.blvnd-editorial-hero .primary-btn{background:#ff3d8f;box-shadow:none;border:1px solid #ff3d8f;color:#09090b;padding:0 28px;min-height:56px;letter-spacing:.09em}
+.blvnd-editorial-hero .primary-btn:hover{background:#fff;border-color:#fff;transform:translateY(-3px)}
+.blvnd-editorial-hero .ghost-btn{border:0;border-bottom:1px solid #dfd8d9;background:transparent;padding:0 4px;min-height:48px}
+.blvnd-editorial-hero .ghost-btn:hover{border-color:#ff3d8f}
+.hero-backdrop-word{position:absolute;top:9%;left:49%;font:400 clamp(140px,25vw,440px)/1 'Bebas Neue',Impact,sans-serif;color:rgba(255,255,255,.027);letter-spacing:-.06em;transform:rotate(-90deg) translateX(-60%);pointer-events:none;z-index:1}
+.hero-side-note{position:absolute;top:38%;right:2.2vw;z-index:5;writing-mode:vertical-rl;font:600 9px/1.8 'Space Grotesk',sans-serif;letter-spacing:.25em;color:#dfb0c6}
+.blvnd-editorial-hero .hero-corner{right:5vw;bottom:35px;color:#c5a4b2;font-size:9px}
+.blvnd-editorial-hero .scroll-cue{left:6.5vw;right:auto;bottom:28px;writing-mode:horizontal-tb;font-size:9px;letter-spacing:.26em;color:#cbb3c0}
+.blvnd-editorial-hero .hero-scanlines{opacity:.3;pointer-events:none}
+.blvnd-ticker{overflow:hidden;position:relative;background:#ff3d8f;color:#08070b;border-top:2px solid #ff3d8f;border-bottom:2px solid #ff3d8f;white-space:nowrap;padding:13px 0;transform:rotate(-1.2deg) scale(1.025);z-index:7}
+.blvnd-ticker-track{width:max-content;animation:blvndMarquee 26s linear infinite}
+.blvnd-ticker span{font:500 clamp(26px,3.7vw,56px)/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em}
+.blvnd-ticker b{padding:0 23px;font-weight:400}
+@keyframes blvndMarquee{to{transform:translateX(-50%)}}
+.blvnd-editorial-feature{max-width:none;padding:clamp(100px,11vw,185px) max(6vw,calc((100vw - 1450px)/2));background:#f1ede8;color:#161318}
+.blvnd-editorial-feature .section-grid{max-width:1450px;margin:auto;grid-template-columns:1fr 1fr;gap:clamp(35px,8vw,140px)}
+.blvnd-editorial-feature .section-kicker{color:#a32054}
+.blvnd-editorial-feature .section-copy h2{font-size:clamp(85px,11vw,180px);line-height:.73;letter-spacing:-.025em}
+.blvnd-editorial-feature .section-copy h2 span{color:#ee286f}
+.blvnd-editorial-feature .section-copy p{color:#5e5159;max-width:380px}
+.blvnd-editorial-feature .status{color:#25131b}
+.blvnd-editorial-feature .outline-btn{border:1px solid #211a1e;color:#211a1e}
+.blvnd-editorial-feature .outline-btn:hover{background:#211a1e;color:#fff}
+.blvnd-editorial-feature .gaming-art{height:min(680px,75vw);transform:rotate(3deg);box-shadow:30px 30px 0 #ff3d8f}
+.blvnd-editorial-feature .gaming-art:hover{transform:rotate(0deg) scale(1.01)}
+.blvnd-editorial-games{background:#0b0b0f}
+.blvnd-editorial-games .section-heading{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:18px}
+.blvnd-editorial-games .section-heading h2{font-size:clamp(90px,11vw,175px);line-height:.75}
+.blvnd-editorial-games .section-heading p{max-width:300px}
+.blvnd-editorial-games .game-grid{gap:16px;grid-auto-rows:480px}
+.blvnd-editorial-games .game-card{border-radius:0;min-height:0!important}
+.blvnd-editorial-games .game-featured{grid-column:span 2}
+.blvnd-editorial-games .game-card:after{content:"EXPLORE / BLVND";position:absolute;top:18px;left:22px;z-index:3;font-size:9px;font-weight:700;letter-spacing:.2em;color:#fff}
+.blvnd-editorial-games .game-card .game-info h3{font-size:clamp(45px,5vw,85px);letter-spacing:-.015em}
+.blvnd-editorial-games .game-card:hover{transform:translateY(-10px);border-color:#ff3d8f}
+.blvnd-editorial-rates{background:#f1ede8;color:#171216;max-width:none;padding-left:max(6vw,calc((100vw - 1350px)/2));padding-right:max(6vw,calc((100vw - 1350px)/2))}
+.blvnd-editorial-rates .section-kicker,.blvnd-editorial-rates .rate-title>span{color:#a32054}
+.blvnd-editorial-rates .section-heading h2{font-size:clamp(95px,11vw,170px);line-height:.75}
+.blvnd-editorial-rates .section-heading h2 span{color:#f12b76}
+.blvnd-editorial-rates .section-heading p{color:#5b4b52}
+.blvnd-editorial-rates .rate-block{border-color:rgba(21,12,18,.2)}
+.blvnd-editorial-rates .rate-title p{color:#74636c}
+.blvnd-editorial-rates .package-card,.blvnd-editorial-rates .gta-rates .package-card{background:#fff;color:#171216;border-color:rgba(21,12,18,.13);box-shadow:4px 4px 0 rgba(12,5,9,.06)}
+.blvnd-editorial-rates .package-card strong{color:#161116}
+.blvnd-editorial-rates .package-card p{color:#62545b}
+.blvnd-editorial-rates .package-card:hover{background:#171116;color:#fff;box-shadow:9px 9px 0 #ff3d8f;transform:translate(-4px,-4px)}
+.blvnd-editorial-rates .package-card:hover strong{color:#fff}
+.blvnd-editorial-rates .package-card:hover p{color:#c8bac2}
+.blvnd-editorial-crew{min-height:820px;background:#0c070e}
+.blvnd-editorial-crew .crew-content h2{font-size:clamp(110px,15vw,230px);line-height:.75}
+.blvnd-editorial-crew .crew-price{color:#ff4e9d}
+.blvnd-editorial-final{min-height:75vh;display:grid;place-items:center;background:#ff3d8f;color:#121014}
+.blvnd-editorial-final .section-kicker{color:#4d1030}
+.blvnd-editorial-final .cta-inner h2{font-size:clamp(90px,12vw,185px);line-height:.78}
+.blvnd-editorial-final .cta-inner h2 span{color:#fff}
+.blvnd-editorial-final .primary-btn{background:#161016;color:#fff;box-shadow:none}
+.blvnd-editorial-final .primary-btn:hover{background:#fff;color:#161016}
+@media(max-width:1100px){.blvnd-editorial-hero h1{font-size:clamp(100px,15vw,170px)}.blvnd-editorial-hero .blvnd-three-scene{inset:0 -8% 0 28%}.blvnd-editorial-hero .hero-content{max-width:720px}.blvnd-editorial-feature .section-grid{gap:45px}}
+@media(max-width:700px){.blvnd-editorial-hero{height:auto;min-height:830px;padding:105px 7vw 130px;align-items:flex-end}.blvnd-editorial-hero .blvnd-three-scene{inset:4% -17% 27% -17%;opacity:.9}.blvnd-editorial-hero .hero-image{opacity:.14!important}.blvnd-editorial-hero:after{background:linear-gradient(0deg,#09090b 10%,rgba(9,9,11,.04) 75%,rgba(9,9,11,.38))}.blvnd-editorial-hero .hero-content{padding:0}.blvnd-editorial-hero .hero-logo{display:none}.blvnd-editorial-hero h1{font-size:clamp(94px,19vw,153px);margin:20px 0 18px}.blvnd-editorial-hero p{max-width:300px;font-size:10px}.blvnd-editorial-hero .hero-actions{flex-wrap:wrap;gap:6px}.blvnd-editorial-hero .primary-btn{min-height:52px}.hero-side-note,.blvnd-editorial-hero .hero-corner{display:none}.blvnd-editorial-hero .scroll-cue{left:7vw}.blvnd-editorial-feature{padding:110px 7vw}.blvnd-editorial-feature .section-grid{grid-template-columns:1fr;gap:50px}.blvnd-editorial-feature .gaming-art{height:420px;width:calc(100% - 20px);margin-left:0}.blvnd-editorial-games .game-grid{grid-template-columns:1fr;grid-auto-rows:390px}.blvnd-editorial-games .game-featured{grid-column:auto}.blvnd-editorial-rates{padding:100px 7vw}.blvnd-editorial-rates .rate-grid{grid-template-columns:1fr 1fr}.blvnd-editorial-rates .rate-title{display:block}.blvnd-editorial-rates .rate-title p{margin-top:9px}.blvnd-editorial-crew{min-height:700px}.blvnd-editorial-crew .crew-content h2{font-size:clamp(90px,16vw,145px)}}
+@media(max-width:420px){.blvnd-editorial-hero h1{font-size:20vw}.blvnd-editorial-rates .rate-grid{grid-template-columns:1fr}.blvnd-editorial-feature .section-copy h2{font-size:80px}}
+@media(prefers-reduced-motion:reduce){.blvnd-ticker-track{animation:none}.blvnd-editorial-feature .gaming-art{transform:none}}
