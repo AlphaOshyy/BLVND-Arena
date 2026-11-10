@@ -142,3 +142,9 @@ footer .footer-brand:before{content:'//';position:absolute;left:-18px;bottom:1px
 @media(max-width:800px){.blvnd-experience{padding:75px 5vw}.blvnd-experience-stage{min-height:610px;height:74svh}.blvnd-experience-copy{bottom:135px;left:25px;max-width:calc(100% - 50px)}.blvnd-experience-copy h2{font-size:clamp(70px,13vw,120px)}.blvnd-experience-controls{right:20px;bottom:22px}.blvnd-experience-controls button{width:52px;height:52px}.blvnd-experience-tabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.blvnd-experience-tabs button{min-width:170px;scroll-snap-align:start}}
 @media(max-width:480px){.blvnd-experience-stage{min-height:560px}.blvnd-experience-copy h2{font-size:clamp(65px,15vw,95px)}.blvnd-experience-copy p{font-size:10px}.blvnd-experience-counter{margin-right:4px}.blvnd-experience-index{display:none}}
 @media(prefers-reduced-motion:reduce){.blvnd-experience-copy{animation:none}.blvnd-experience-controls button{transition:none}}
+
+/* Controller removed: let cinematic artwork carry the hero instead. */
+.blvnd-editorial-hero .hero-image{opacity:.54!important;filter:saturate(.8) contrast(1.12)!important;background-position:68% 38%;mix-blend-mode:normal}
+.blvnd-editorial-hero:after{background:linear-gradient(90deg,#08080a 0%,rgba(8,8,10,.95) 21%,rgba(8,8,10,.73) 48%,rgba(8,8,10,.1) 100%),linear-gradient(0deg,#08080a,transparent 30%);z-index:1}
+.blvnd-editorial-hero .hero-backdrop-word{opacity:.45}
+@media(max-width:700px){.blvnd-editorial-hero .hero-image{opacity:.34!important;background-position:65% 20%}.blvnd-editorial-hero:after{background:linear-gradient(0deg,#09090b 6%,rgba(9,9,11,.48) 56%,rgba(9,9,11,.7) 100%)}}
